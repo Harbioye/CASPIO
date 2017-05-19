@@ -11,6 +11,7 @@ import UIKit
 class saveTextViewController: UIViewController {
     
     var results = ""
+    var n: Int = 0
     
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var completeText: UILabel!
@@ -32,10 +33,11 @@ class saveTextViewController: UIViewController {
         
         let workshop = Workshop(filename: "insert filename", speechText: results)
         
-        DataManager.shared.workshops.append(workshop)
+        DataManager.sharedInstance.workshops.append(workshop)
         
+        n += 1
         
-        DataManager.shared.workshops[0].speechText
+        DataManager.sharedInstance.workshops[n]
         
     }
 }
